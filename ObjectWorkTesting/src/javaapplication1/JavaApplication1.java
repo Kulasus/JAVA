@@ -30,11 +30,15 @@ public class JavaApplication1 {
         
         //Writer writer = new Writer(new ObjectOutputStream(new FileOutputStream("output.txt")));
         //writer.WriteArrayOfStudentsToTXT(students);
+        Writer writer = new Writer("outputs.txt");
+        writer.WriteArrayOfStudentsToTXT(students);
         
+        /*
         try(ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("output.txt"))){
             writer.writeObject(students);
             writer.close();
         }
+*/
     }
     
     

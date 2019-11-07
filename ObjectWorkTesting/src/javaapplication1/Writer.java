@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -14,20 +16,15 @@ import java.util.ArrayList;
  * @author KON0355
  */
 public class Writer {
-    private final ObjectOutputStream writer;
-    public Writer(ObjectOutputStream writer){
-        this.writer = writer;
+    private final String outputFileName;
+    public Writer(String outputFileName){
+        this.outputFileName = outputFileName;
     }
-    public void WriteArrayOfStudentsToTXT(ArrayList<Student> students)
+    public void WriteArrayOfStudentsToTXT(ArrayList<Student> students) throws IOException
     {
-        try
-        {
-           writer.writeObject(students);
-           writer.close();
-        }
-        catch(IOException e)
-        {
-            System.out.println("Cant opet txt file!");
+        try(ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(this.outputFileName))){
+            writer.writeObject(students);
+            writer.close();
         }
     }
 }
