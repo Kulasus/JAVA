@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.NotSerializableException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
@@ -18,6 +20,7 @@ import java.util.ArrayList;
  */
 public class JavaApplication1 {
     private static final String fileName = "studentObjects.txt";
+
     /**
      * @param args the command line arguments
      */
@@ -38,6 +41,28 @@ public class JavaApplication1 {
         exerciseClass.printStudentWithMinimalPoints();
         System.out.println("Average points in class: "+exerciseClass.countAveragePoints());
         System.out.println("List of all names in class: "+exerciseClass.getAllNames());
+        
+        System.out.println();
+        System.out.println("All students in class: ");
+        writeArrayOfStudents(exerciseClass.getStudents());
+        System.out.println();
+        
+        System.out.println("Sorting by points...");
+        System.out.println();
+        
+        Collections.sort(exerciseClass.getStudents());
+        
+        System.out.println("All students in class: ");
+        writeArrayOfStudents(exerciseClass.getStudents());
+        System.out.println();
+        
+    }
+
+    private static void writeArrayOfStudents(ArrayList<Student> students) {
+        for(Student s:students)
+        {
+            System.out.println(s.toString());
+        }
     }
     
     

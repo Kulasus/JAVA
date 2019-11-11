@@ -53,4 +53,8 @@ public class ExerciseClass {
                .collect(Collectors.joining(", "));
         return result;    
     }
+    
+    public ArrayList<Student> getStudents(){
+        return this.students;
+    }
 }
