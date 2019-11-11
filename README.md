@@ -1,2 +1,2 @@
 # JAVA
-Java and Java FX
+Java and JavaFX
