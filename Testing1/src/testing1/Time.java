@@ -16,5 +16,14 @@ public class Time {
         this.minutes = minutes;
         this.seconds = seconds;
     }
+    public int getSeconds(){
+        return seconds;
+    }
+    public int getMinutes(){
+        return minutes;
+    }
     
+    public int getHours(){
+        return hours;
+    }
 }

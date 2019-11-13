@@ -18,7 +18,6 @@ import java.util.LinkedList;
 public class Loader {
     private ArrayList<Person> persons = new ArrayList<>();
     private BufferedReader inputStream;
-    private String inputFileName;
     private StringBuilder sb;
     public Loader(){
     }
